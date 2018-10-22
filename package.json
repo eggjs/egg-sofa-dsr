@@ -1,0 +1,70 @@
+{
+  "name": "egg-sofa-dsr",
+  "version": "0.0.2",
+  "description": "The sofa node dsr plugin",
+  "eggPlugin": {
+    "name": "sofaDsr",
+    "optionalDependencies": [
+      "sofaAntvip",
+      "sofaRpc"
+    ]
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "antfin",
+    "sofa",
+    "register"
+  ],
+  "dependencies": {
+    "antfin-sofa-node-dsr": "^0.0.1"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.1.0",
+    "egg": "^2.11.2",
+    "egg-bin": "^4.9.0",
+    "egg-ci": "^1.9.2",
+    "egg-mock": "^3.20.1",
+    "egg-rpc-generator": "^1.0.0",
+    "egg-sofa-antvip": "^0.0.3",
+    "egg-sofa-rpc": "^1.0.1",
+    "eslint": "^5.6.1",
+    "eslint-config-egg": "^7.1.0",
+    "mz": "^2.7.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "sh test/init.sh && npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "sh test/init.sh && egg-bin cov",
+    "lint": "eslint .",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles",
+    "autod": "autod"
+  },
+  "files": [
+    "app",
+    "config",
+    "lib",
+    "agent.js",
+    "app.js"
+  ],
+  "ci": {
+    "version": "8, 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eggjs/egg-sofa-dsr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eggjs/egg/issues"
+  },
+  "homepage": "https://github.com/eggjs/egg-sofa-dsr#readme",
+  "author": "leoner",
+  "license": "MIT"
+}
