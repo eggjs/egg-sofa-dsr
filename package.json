@@ -18,7 +18,7 @@
     "register"
   ],
   "dependencies": {
-    "antfin-sofa-node-dsr": "^0.0.1"
+    "antfin-sofa-node-dsr": "^0.0.2"
   },
   "devDependencies": {
     "autod": "^3.0.1",
