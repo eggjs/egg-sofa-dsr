@@ -6,6 +6,10 @@ const ConfigClient = require('antfin-sofa-node-dsr');
 const _sofaRegistry = Symbol.for('egg#sofaRegistry');
 module.exports = {
   get sofaRegistry() {
+    if (this.config.sofaDsr.enable === false) {
+      return null;
+    }
+    
     if (!this[_sofaRegistry]) {
       const logger = this.getLogger('dsrLogger');
       const options = Object.assign({
