@@ -16,23 +16,16 @@ module.exports = appInfo => {
    * @since 1.0.0
    */
   const config = {
-    sofaDsr: {
-      heartbeatInterval: 30000,
-      responseTimeout: 10000,
-      retryInterval: 5000,
-      maxRetryInterval: 5 * 60000,
-      maxUpdateErrorCount: 10,
-      snapshotDir: path.join(appInfo.root, 'conf', 'dsr-node-client-cache'),
-      ignoreStartError: false,
-    },
-    customLogger: {
-      dsrLogger: {
-        consoleLevel: 'NONE',
-        file: path.join(appInfo.root, 'logs/dsr.log'),
+    rpc: {
+      registryClass: require('antfin-sofa-node-dsr'),
+      registry: {
+        heartbeatInterval: 30000,
+        responseTimeout: 10000,
+        retryInterval: 5000,
+        maxRetryInterval: 5 * 60000,
+        maxUpdateErrorCount: 10,
+        snapshotDir: path.join(appInfo.root, 'conf', 'dsr-node-client-cache'),
       },
-    },
-    sofaRpc: {
-      registerClass: require('../lib/index.js'),
     },
   };
 
